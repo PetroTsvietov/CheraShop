@@ -1,0 +1,11 @@
+C:\Users\Petya\source\repos\Chera_shop_2\Chera_shop_2\bin\Debug\netcoreapp3.1\Chera_shop_2.exe
+C:\Users\Petya\source\repos\Chera_shop_2\Chera_shop_2\bin\Debug\netcoreapp3.1\Chera_shop_2.deps.json
+C:\Users\Petya\source\repos\Chera_shop_2\Chera_shop_2\bin\Debug\netcoreapp3.1\Chera_shop_2.runtimeconfig.json
+C:\Users\Petya\source\repos\Chera_shop_2\Chera_shop_2\bin\Debug\netcoreapp3.1\Chera_shop_2.runtimeconfig.dev.json
+C:\Users\Petya\source\repos\Chera_shop_2\Chera_shop_2\bin\Debug\netcoreapp3.1\Chera_shop_2.dll
+C:\Users\Petya\source\repos\Chera_shop_2\Chera_shop_2\bin\Debug\netcoreapp3.1\Chera_shop_2.pdb
+C:\Users\Petya\source\repos\Chera_shop_2\Chera_shop_2\obj\Debug\netcoreapp3.1\Chera_shop_2.csprojAssemblyReference.cache
+C:\Users\Petya\source\repos\Chera_shop_2\Chera_shop_2\obj\Debug\netcoreapp3.1\Chera_shop_2.AssemblyInfoInputs.cache
+C:\Users\Petya\source\repos\Chera_shop_2\Chera_shop_2\obj\Debug\netcoreapp3.1\Chera_shop_2.AssemblyInfo.cs
+C:\Users\Petya\source\repos\Chera_shop_2\Chera_shop_2\obj\Debug\netcoreapp3.1\Chera_shop_2.dll
+C:\Users\Petya\source\repos\Chera_shop_2\Chera_shop_2\obj\Debug\netcoreapp3.1\Chera_shop_2.pdb
