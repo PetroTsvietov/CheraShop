@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Petya\\source\\repos\\Chera_shop_2\\Chera_shop_2\\Chera_shop_2.csproj": {}
+    "C:\\Users\\Petya\\source\\repos\\chera_shop_2\\Chera_shop_2\\Chera_shop_2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Petya\\source\\repos\\Chera_shop_2\\Chera_shop_2\\Chera_shop_2.csproj": {
+    "C:\\Users\\Petya\\source\\repos\\chera_shop_2\\Chera_shop_2\\Chera_shop_2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Petya\\source\\repos\\Chera_shop_2\\Chera_shop_2\\Chera_shop_2.csproj",
+        "projectUniqueName": "C:\\Users\\Petya\\source\\repos\\chera_shop_2\\Chera_shop_2\\Chera_shop_2.csproj",
         "projectName": "Chera_shop_2",
-        "projectPath": "C:\\Users\\Petya\\source\\repos\\Chera_shop_2\\Chera_shop_2\\Chera_shop_2.csproj",
+        "projectPath": "C:\\Users\\Petya\\source\\repos\\chera_shop_2\\Chera_shop_2\\Chera_shop_2.csproj",
         "packagesPath": "C:\\Users\\Petya\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Petya\\source\\repos\\Chera_shop_2\\Chera_shop_2\\obj\\",
+        "outputPath": "C:\\Users\\Petya\\source\\repos\\chera_shop_2\\Chera_shop_2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Petya\\AppData\\Roaming\\NuGet\\NuGet.Config",

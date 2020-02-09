@@ -41,8 +41,9 @@ namespace chera_shop_2
     }
     class Account
     {
+        StarMenu sm = new StarMenu();
         User u = new User("login", "password");
-        List<User> users = new List<User>();
+       public List<User> users = new List<User>();
         Validation val = new Validation();
         Use use;
         public void DataBase()
@@ -71,6 +72,7 @@ namespace chera_shop_2
                     }
                 }
             }
+            Console.WriteLine(users.Count);
         }
         public void Registration()
         {
@@ -106,35 +108,36 @@ namespace chera_shop_2
             string login2 = Console.ReadLine();
             Console.Write("Password:");
             string password2 = Console.ReadLine();
+            foreach (User u in users)
+            {
+                if (u.Equals(new User(login2, password2)))
+                {
+                    sm.start();
+                }
+                else
+                {
+                    Console.WriteLine("Your password or login is invalid! Or you invalid");
+                    Autorization();
+                }
+            }
         }
     }
     class Validation
     {
-
-        public bool regist(string a)
-        {
-            string path = @"D:\HLAM\DB.txt";
-            using (StreamReader sr = new StreamReader(path, System.Text.Encoding.Default))
+            public override bool Equals(object o) {
+            Account A = new Account();
+            User currentUser = o as User;
+            if ((currentUser)!=null)
             {
-                string line;
-                int i = 0;
-                while ((line = sr.ReadLine()) != null)
+                foreach (User u in A.users)
                 {
-                    i++;
-                    if (i % 2 != 0)
+                    if (u.login == currentUser.login && u.password == currentUser.password)
                     {
-                        if (a == line)
-                        {
-                            return true;
-                        }
-                        else
-                        {
-                            return false;
-                        }
+                        return true;
                     }
                 }
             }
-            return true;
+                return false;
+            }
         }
     }
-}
