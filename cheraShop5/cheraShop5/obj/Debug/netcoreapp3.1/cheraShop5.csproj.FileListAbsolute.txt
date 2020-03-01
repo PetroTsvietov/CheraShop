@@ -1,0 +1,11 @@
+C:\Users\Petya\source\repos\cheraShop5\cheraShop5\bin\Debug\netcoreapp3.1\cheraShop5.exe
+C:\Users\Petya\source\repos\cheraShop5\cheraShop5\bin\Debug\netcoreapp3.1\cheraShop5.deps.json
+C:\Users\Petya\source\repos\cheraShop5\cheraShop5\bin\Debug\netcoreapp3.1\cheraShop5.runtimeconfig.json
+C:\Users\Petya\source\repos\cheraShop5\cheraShop5\bin\Debug\netcoreapp3.1\cheraShop5.runtimeconfig.dev.json
+C:\Users\Petya\source\repos\cheraShop5\cheraShop5\bin\Debug\netcoreapp3.1\cheraShop5.dll
+C:\Users\Petya\source\repos\cheraShop5\cheraShop5\bin\Debug\netcoreapp3.1\cheraShop5.pdb
+C:\Users\Petya\source\repos\cheraShop5\cheraShop5\obj\Debug\netcoreapp3.1\cheraShop5.csprojAssemblyReference.cache
+C:\Users\Petya\source\repos\cheraShop5\cheraShop5\obj\Debug\netcoreapp3.1\cheraShop5.AssemblyInfoInputs.cache
+C:\Users\Petya\source\repos\cheraShop5\cheraShop5\obj\Debug\netcoreapp3.1\cheraShop5.AssemblyInfo.cs
+C:\Users\Petya\source\repos\cheraShop5\cheraShop5\obj\Debug\netcoreapp3.1\cheraShop5.dll
+C:\Users\Petya\source\repos\cheraShop5\cheraShop5\obj\Debug\netcoreapp3.1\cheraShop5.pdb
