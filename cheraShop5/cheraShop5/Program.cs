@@ -13,7 +13,7 @@ namespace cheraShop5
             Account ac = new Account();
             db.createFiles();
             ac.enterToDB();
-            ac.autorization();
+            ac.choice();
             Console.ReadKey();
         }
     }
@@ -100,7 +100,6 @@ namespace cheraShop5
             }
             Console.WriteLine(user.Count);
         } //добавляем в список аккаунты с БД
-
         public void registration()
         {
             Console.WriteLine("Hello! Start registration please!\nEnter your login:");
@@ -108,7 +107,7 @@ namespace cheraShop5
             if (val.regist(new_login) == false)
             {
                 Console.WriteLine("This login is not avilable");
-                registration();
+                choice();
             }
             else
             {
@@ -119,14 +118,14 @@ namespace cheraShop5
                 if (re_new_password != new_password)
                 {
                     Console.WriteLine("You entered the wrong password again");
-                    registration();
+                    choice();
                 }
                 else
                 {
                     Console.WriteLine("Congratulations!");
                     string writePath = @"D:\DB.txt";
 
-                    using (StreamWriter sw = new StreamWriter(writePath, true, System.Text.Encoding.Default))
+                    using (StreamWriter sw = new StreamWriter(writePath, true, Encoding.Default))
                     {
                         Console.WriteLine("\n");
                         sw.WriteLine(new_login);
@@ -136,16 +135,21 @@ namespace cheraShop5
                 }
             }
         }//регистрация
-        public void autorization()
+        public void choice()
         {
-            Console.WriteLine("Hello! If you want create account enter 1, if you want autorization enter 2");
+            Console.WriteLine("Hello! If you want create account enter 1, if you want autorization enter something else");
             string choice = Console.ReadLine();
             if (choice == "1")
             {
                 registration();
             }
-            else if (choice == "2")
+            else
             {
+                autorization();
+            }
+        }
+        public void autorization()
+        {
                 Console.Write("Login:");
                 string login2 = Console.ReadLine();
                 Console.Write("Password:");
@@ -160,13 +164,9 @@ namespace cheraShop5
                     else
                     {
                         Console.WriteLine("Your password or login is invalid! Or you invalid");
-                        autorization();
+                        choice();
                     }
                 }
-            }
-            else{
-                autorization();
-            }
         }//авторизация
     }
     class Validation
