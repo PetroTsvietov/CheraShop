@@ -9,20 +9,47 @@ namespace cheraShop5
     {
         static void Main(string[] args)
         {
-            DataBase db = new DataBase();
-            Account ac = new Account();
-            db.createFiles();
-            ac.enterToDB();
-            ac.choice();
+            DataBase database = new DataBase();
+            Account account = new Account();
+            database.TextFiles();
+            account.EnterToDB();
+            account.Registration();
             Console.ReadKey();
         }
     }
     class StartMenu
     {
-        Account ac = new Account();
-        public void start()
+        public void OutText(string pathOutText)
         {
-            Console.WriteLine("Ebat ti krasavela");
+            using (StreamReader sr = new StreamReader(pathOutText))
+            {
+                Console.WriteLine(sr.ReadToEnd());
+            }
+        }
+        public void Start()
+        {
+            Account Account = new Account();
+            Console.WriteLine("Hello, enter a catalog, what you need.\n1.Fruits\n2.Vegetables\n3.Faloses\n4.Basket\n5.Exit from account");
+            string numberOfCatalog = Console.ReadLine();
+            switch (numberOfCatalog)
+            {
+                case "1":
+                    OutText(@"fruit.txt");
+                    break;
+                case "2":
+                    OutText(@"veg.txt");
+                    break;
+                case "3":
+                    OutText(@"cherSamotiki.txt");
+                    break;
+                case "4":
+                    OutText(@"basket.txt");
+                    break;
+                case "5":
+                    Account.Registration();
+                    break;
+            }
+
         }
     }
     struct Users
@@ -32,28 +59,14 @@ namespace cheraShop5
     }
     class DataBase
     {
-
-        public void textFiles(string path, string elements) // метод создания файла
+        public void TextFiles() // метод создания файла
         {
-            using (FileStream fs = File.Create(path)) {
-                byte[] info = new UTF8Encoding(true).GetBytes(elements);
-                fs.Write(info, 0, info.Length);
+            string[] path = new string[] {@"fruit.txt", @"veg.txt", @"cherSamotiki.txt", @"DB.txt", @"basket.txt"};
+            string[] elements = new string[] { "1.apple\n2.pineapple\n3.banana\n4.Back", "1.Vladlen\n2.Chera\n3.Mama\n4.Back", "1.Dominator\n2.Big Boy\n3.King Kong\n4.Back", "Peter\nAdmin", ""};
+            for(int i = 0; i<path.Length; i++)
+            {
+                File.AppendAllLines(path[i], new string[] { elements[i] });
             }
-        }
-        public void createFiles() //ну типа создаю файлики собсна
-        {
-            string fruitPath = @"D:\fruit.txt";
-            string fruitElements = "1.apple\n2.pineapple\n3.banana";
-            string vegPath = @"D:\veg.txt";
-            string vegElements = "1.Vladlen\n2.Chera\n3.Mama";
-            string cherPath = @"D:\cherSamotiki.txt";
-            string cherElements = "1.Dominator\n2.Big Boy\n3.King Kong";
-            string DBPath = @"D:\DB.txt";
-            string DBElements = "Admin\nPeter";
-            textFiles(fruitPath, fruitElements);
-            textFiles(vegPath, vegElements);
-            textFiles(cherPath, cherElements);
-            textFiles(DBPath, DBElements);
         }
     }
     class ModelAcc
@@ -68,13 +81,11 @@ namespace cheraShop5
     }
     class Account
     {
-        StartMenu sm = new StartMenu();
         public List<ModelAcc> user = new List<ModelAcc>();
         Users users;
-        Validation val = new Validation();
-        public void enterToDB()
+        public void EnterToDB()
         {
-            string path = @"D:\DB.txt";
+            string path = @"DB.txt";
             using (StreamReader sr = new StreamReader(path, Encoding.Default))
             {
                 string line;
@@ -100,86 +111,85 @@ namespace cheraShop5
             }
             Console.WriteLine(user.Count);
         } //добавляем в список аккаунты с БД
-        public void registration()
+        public void Registration()
         {
-            Console.WriteLine("Hello! Start registration please!\nEnter your login:");
-            string new_login = Console.ReadLine();
-            if (val.regist(new_login) == false)
+            Validation validation = new Validation();
+            Console.WriteLine("Enter 1 if you want create account or somthing else if you want do autorization");
+            string regOrAuth = Console.ReadLine();
+            if (regOrAuth != "1")
             {
-                Console.WriteLine("This login is not avilable");
-                choice();
+                Autorization();
             }
             else
             {
-                Console.WriteLine("Enter your password:");
-                string new_password = Console.ReadLine();
-                Console.WriteLine("Re-enter password:");
-                string re_new_password = Console.ReadLine();
-                if (re_new_password != new_password)
+                Console.WriteLine("Hello! Start registration please!\nEnter your login:");
+                string new_login = Console.ReadLine();
+                if (validation.Regist(new_login) == false)
                 {
-                    Console.WriteLine("You entered the wrong password again");
-                    choice();
+                    Console.WriteLine("This login is not avilable");
+                    Registration();
                 }
                 else
                 {
-                    Console.WriteLine("Congratulations!");
-                    string writePath = @"D:\DB.txt";
-
-                    using (StreamWriter sw = new StreamWriter(writePath, true, Encoding.Default))
+                    Console.WriteLine("Enter your password:");
+                    string new_password = Console.ReadLine();
+                    Console.WriteLine("Re-enter password:");
+                    string re_new_password = Console.ReadLine();
+                    if (re_new_password != new_password)
                     {
-                        Console.WriteLine("\n");
-                        sw.WriteLine(new_login);
-                        sw.WriteLine(new_password);
+                        Console.WriteLine("You entered the wrong password again");
+                        Registration();
                     }
-                    enterToDB();
+                    else
+                    {
+                        Console.WriteLine("Congratulations!");
+                        string writePath = @"DB.txt";
+
+                        using (StreamWriter sw = new StreamWriter(writePath, true, Encoding.Default))
+                        {
+                            Console.WriteLine("\n");
+                            sw.WriteLine(new_login);
+                            sw.WriteLine(new_password);
+                        }
+                       EnterToDB();
+                       Autorization();
+                    }
                 }
             }
         }//регистрация
-        public void choice()
+        public void Autorization()
         {
-            Console.WriteLine("Hello! If you want create account enter 1, if you want autorization enter something else");
-            string choice = Console.ReadLine();
-            if (choice == "1")
-            {
-                registration();
-            }
-            else
-            {
-                autorization();
-            }
-        }
-        public void autorization()
-        {
-                Console.Write("Login:");
+            StartMenu startmenu = new StartMenu();
+            Validation validation = new Validation();
+            Console.Write("Login:");
                 string login2 = Console.ReadLine();
                 Console.Write("Password:");
                 string password2 = Console.ReadLine();
                 foreach (ModelAcc u in user)
                 {
-                    if (val.Equals(new ModelAcc(login2, password2)) == true)
+                    if (validation.Equals(new ModelAcc(login2, password2)) == true)
                     {
-                        sm.start();
+                        startmenu.Start();
                         break;
                     }
                     else
                     {
                         Console.WriteLine("Your password or login is invalid! Or you invalid");
-                        choice();
+                        Autorization();
                     }
                 }
         }//авторизация
     }
     class Validation
     {
-        Account ac = new Account();
         public override bool Equals(object o)
         {
-            Account A = new Account();
-            ac.enterToDB();
+            Account account = new Account();
+            account.EnterToDB();
             ModelAcc currentUser = o as ModelAcc;
             if ((currentUser) != null)
             {
-                foreach (ModelAcc u in A.user)
+                foreach (ModelAcc u in account.user)
                 {
                     if (u.login == currentUser.login && u.password == currentUser.password)
                     {
@@ -189,9 +199,9 @@ namespace cheraShop5
             }
             return false;
         }//проверка на наличие аккаунта в БД
-        public bool regist(string trueLogin)
+        public bool Regist(string trueLogin)
         {
-            string path = @"D:\DB.txt";
+            string path = @"DB.txt";
             using (StreamReader sr = new StreamReader(path, Encoding.Default))
             {
                 string line;
