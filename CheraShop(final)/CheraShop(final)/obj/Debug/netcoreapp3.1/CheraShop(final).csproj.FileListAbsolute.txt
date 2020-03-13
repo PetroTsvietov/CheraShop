@@ -1,0 +1,11 @@
+C:\Users\User\source\repos\CheraShop(final)\CheraShop(final)\bin\Debug\netcoreapp3.1\CheraShop(final).exe
+C:\Users\User\source\repos\CheraShop(final)\CheraShop(final)\bin\Debug\netcoreapp3.1\CheraShop(final).deps.json
+C:\Users\User\source\repos\CheraShop(final)\CheraShop(final)\bin\Debug\netcoreapp3.1\CheraShop(final).runtimeconfig.json
+C:\Users\User\source\repos\CheraShop(final)\CheraShop(final)\bin\Debug\netcoreapp3.1\CheraShop(final).runtimeconfig.dev.json
+C:\Users\User\source\repos\CheraShop(final)\CheraShop(final)\bin\Debug\netcoreapp3.1\CheraShop(final).dll
+C:\Users\User\source\repos\CheraShop(final)\CheraShop(final)\bin\Debug\netcoreapp3.1\CheraShop(final).pdb
+C:\Users\User\source\repos\CheraShop(final)\CheraShop(final)\obj\Debug\netcoreapp3.1\CheraShop(final).csprojAssemblyReference.cache
+C:\Users\User\source\repos\CheraShop(final)\CheraShop(final)\obj\Debug\netcoreapp3.1\CheraShop(final).AssemblyInfoInputs.cache
+C:\Users\User\source\repos\CheraShop(final)\CheraShop(final)\obj\Debug\netcoreapp3.1\CheraShop(final).AssemblyInfo.cs
+C:\Users\User\source\repos\CheraShop(final)\CheraShop(final)\obj\Debug\netcoreapp3.1\CheraShop(final).dll
+C:\Users\User\source\repos\CheraShop(final)\CheraShop(final)\obj\Debug\netcoreapp3.1\CheraShop(final).pdb
