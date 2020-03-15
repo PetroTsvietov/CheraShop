@@ -19,16 +19,16 @@ namespace cheraShop5
     }
     class StartMenu
     {
-        public void EnterToBasket(string path, int numberChoice)//метод заносит ебучие продукты в ебучую корзину нахуй
+        public void EnterToBasket(string path, int numberChoice)//метод заносит продукты в корзину
         {
             string pathBasket = @"basket.txt";
             Console.WriteLine("Enter number of product and is will spend to your basket");
             numberChoice = Convert.ToInt32(Console.ReadLine());
             string[] numberLine = File.ReadAllLines(path);
-            using(StreamWriter sw = new StreamWriter(pathBasket, true, Encoding.Default))
-            {
-                Console.WriteLine(numberLine[numberChoice]);
-            }
+                using (StreamWriter sw = new StreamWriter(pathBasket, true, Encoding.Default))
+                {
+                    sw.WriteLine(numberLine[numberChoice]);
+                }
             OutText(path);
         }
         public void OutText(string pathOutText) //метод выводит список продуктов(он у меня в кейсах там юзается) и работает дальше
@@ -65,7 +65,7 @@ namespace cheraShop5
                     break;
             }
 
-        }
+        } //метод вывода каталогов
     }
     struct Users
     {
@@ -80,7 +80,14 @@ namespace cheraShop5
             string[] elements = new string[] { "1.apple\n2.pineapple\n3.banana\n4.Back", "1.Vladlen\n2.Chera\n3.Mama\n4.Back", "1.Dominator\n2.Big Boy\n3.King Kong\n4.Back", "Peter\nAdmin", "" };
             for (int i = 0; i < path.Length; i++)
             {
-                File.AppendAllLines(path[i], new string[] { elements[i] });
+                if (File.Exists(path[i]))
+                {
+                    break;
+                }
+                else
+                {
+                    File.AppendAllLines(path[i], new string[] { elements[i] });                   
+                }
             }
         }
     }

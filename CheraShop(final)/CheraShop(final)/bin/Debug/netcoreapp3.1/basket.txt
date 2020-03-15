@@ -1,16 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+2.pineapple
+3.banana
+3.banana
