@@ -1,4 +1,7 @@
 1.Vladlen
+0
 2.Chera
+1000
 3.Mama
+1
 4.Back

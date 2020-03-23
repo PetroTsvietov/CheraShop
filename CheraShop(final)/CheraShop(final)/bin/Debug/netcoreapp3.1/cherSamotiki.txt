@@ -1,4 +1,7 @@
 1.Dominator
+80
 2.Big Boy
+100
 3.King Kong
+500
 4.Back
